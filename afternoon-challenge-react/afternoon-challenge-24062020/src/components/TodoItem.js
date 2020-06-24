@@ -6,25 +6,29 @@ export default class TodoItem extends React.Component {
 
     this.state = {
       title: this.props.title,
-      completed: false
-    }
+      completed: false,
+    };
   }
 
   getStyle() {
     return {
-      textDecoration: this.state.completed ? "line-through" : "none" 
+      textDecoration: this.state.completed ? "line-through" : "none",
     };
   }
-  
+
   render() {
-    return(
+    return (
       <>
         <p style={this.getStyle()}>{this.state.title}</p>
-        <button onClick={ () => {
-          this.setState({
-            completed: !this.state.completed
-          });
-        } }>Toggle</button>
+        <button
+          onClick={() => {
+            this.setState({
+              completed: !this.state.completed,
+            });
+          }}
+        >
+          Toggle
+        </button>
       </>
     );
   }
