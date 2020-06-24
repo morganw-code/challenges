@@ -18,7 +18,14 @@ export default class TodoItem extends React.Component {
   
   render() {
     return(
-      <p style={this.getStyle()}>{this.state.title}</p>
+      <>
+        <p style={this.getStyle()}>{this.state.title}</p>
+        <button onClick={ () => {
+          this.setState({
+            completed: !this.state.completed
+          });
+        } }>Toggle</button>
+      </>
     );
   }
 }
